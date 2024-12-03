@@ -56,13 +56,10 @@
             }
         }
 
-        /* Floating hearts animation */
-        .heart {
+        /* Floating ribbons animation */
+        .ribbon {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff6161;
-            clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+            font-size: 24px;
             animation: float 5s infinite ease-in-out;
             opacity: 0.8;
         }
@@ -85,21 +82,22 @@
 <body>
     <div class="container">
         <h1>I Love My Girlfriend</h1>
-        <p>Dounia ❤️</p>
+        <p>Dounia❤️ </p>
     </div>
 
-    <!-- Floating hearts -->
+    <!-- Floating ribbons -->
     <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
+        function createRibbon() {
+            const ribbon = document.createElement('div');
+            ribbon.classList.add('ribbon');
+            ribbon.style.left = Math.random() * 100 + 'vw';
+            ribbon.style.animationDuration = Math.random() * 3 + 2 + 's';
+            ribbon.textContent = '🎀'; // Add ribbon emoji
+            document.body.appendChild(ribbon);
+            setTimeout(() => ribbon.remove(), 5000);
         }
 
-        setInterval(createHeart, 300); // Creates a new heart every 300ms
+        setInterval(createRibbon, 300); // Creates a new ribbon every 300ms
     </script>
 </body>
 </html>
